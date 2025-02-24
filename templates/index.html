@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Analizador de opiniones</title>
+    <title>Asistente de Soporte al Cliente</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <div class="container">
-        <h1>Ingrese su opinión acerca del producto</h1>
+        <h1>Describa su experiencia con el producto</h1>
         <form action="{{ url_for('analyze') }}" method="post">
-            <textarea name="text" rows="4" placeholder="Ingrese el texto a analizar..."></textarea>
+            <textarea name="text" rows="4" placeholder="Ingrese su experiencia..."></textarea>
             <button type="submit">Analizar</button>
         </form>
     </div>

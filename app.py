@@ -29,8 +29,8 @@ def home():
 def analyze():
     if request.method == 'POST':
         text = request.form['text']
-        sentiment, score = analyzer.analyze_sentiment(text)
-        return render_template('result.html', text=text, sentiment=sentiment, score=round(score, 2))
+        customer_rating, customer_rating_message, score = analyzer.analyze_sentiment(text)
+        return render_template('result.html', text=text, customer_rating=customer_rating, customer_rating_message=customer_rating_message, score=round(score, 2))
 
 @app.route('/feedback', methods=['POST'])
 def feedback():
@@ -38,7 +38,7 @@ def feedback():
     
     if request.method == 'POST':
         text = request.form['original_text'].lower()
-        feedback_sentiment = request.form['feedback_sentiment']
+        feedback_customer_rating = request.form['feedback_customer_rating']
         
         # Verificar si el texto ya existe en training_data
         text_exists = any(item['text'] == text for item in training_data)
@@ -47,14 +47,14 @@ def feedback():
             # Añadir solo si no existe
             training_data.append({
                 "text": text,
-                "sentiment": feedback_sentiment
+                "customer_rating": feedback_customer_rating
             })
             
             # Guardar el feedback en el archivo de training_data
             with open('data/training_data.py', 'w', encoding='utf-8') as f:
                 f.write('training_data = [\n')
                 for item in training_data:
-                    f.write(f'    {{"text": "{item["text"]}", "sentiment": "{item["sentiment"]}"}},\n')
+                    f.write(f'    {{"text": "{item["text"]}", "customer_rating": "{item["customer_rating"]}"}},\n')
                 f.write(']\n')
             
             # Iniciar el entrenamiento en background

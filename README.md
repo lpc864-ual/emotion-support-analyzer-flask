@@ -1,22 +1,26 @@
-# Spanish Sentiment Analyzer
+# Emotional Support Analyzer
 
-A deep learning-based sentiment analyzer for Spanish text. The application analyzes texts and classifies their sentiment as positive, neutral, or negative.
+A deep learning-based analyzer that classifies customer messages in Spanish to determine their intention and prioritize customer service.
 
 ## Features
 
-- Spanish language sentiment analysis
+- Spanish text analysis to classify customer messages
 - Intuitive web interface
 - Feedback system for model improvement
 - Automatic retraining with new data
 - Natural Language Processing with NLTK
 - LSTM neural network using TensorFlow/Keras
+- Classification into three categories:
+  - **A**: Customer praises the product
+  - **B**: Customer needs additional information about the product for operation
+  - **C**: Customer needs urgent technical support
 
 ## Installation
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/[username]/spanish-sentiment-analyzer.git
-cd spanish-sentiment-analyzer
+git clone https://github.com/[username]/emotion-support-analyzer-flask.git
+cd emotion-support-analyzer-flask
 ```
 
 2. Create a virtual environment (recommended):
@@ -59,14 +63,14 @@ python app.py
 │   └── training_data.py   # Training data
 ├── model/                 # Saved model files
 ├── static/
-│   └── style.css         # CSS styles
-├── templates/            # HTML templates
+│   └── style.css          # CSS styles
+├── templates/             # HTML templates
 │   ├── index.html
 │   ├── result.html
 │   └── training.html
-├── requirements.txt      # Project dependencies
-├── LICENSE.md           # License information
-└── README.md            # This file
+├── requirements.txt       # Project dependencies
+├── LICENSE.md             # License information
+└── README.md              # This file
 ```
 
 ## Model
@@ -96,8 +100,8 @@ Contributions are welcome. Please follow these steps:
 - TensorFlow
 - NLTK
 - NumPy
-- Pandas
 - scikit-learn
+- Keras
 
 ## License
 

@@ -10,21 +10,19 @@
     <div class="container">
         <h1>Resultado del Análisis</h1>
         <div class="result">
-            <h2>Opinión analizada:</h2>
+            <h2>Experiencia analizada:</h2>
             <p>{{ text }}</p>
-            <h2>Sentimiento:</h2>
-            <p class="sentiment {{ sentiment }}">{{ sentiment.title() }}</p>
-            <p>Puntuación: {{ score }}</p>
+            <p class="sentiment {{ customer_rating }}">{{ customer_rating_message }} ({{ score }})</p>
+            <p>{{ customer_rating_message }} ({{ score }})</p>
 
             <div class="feedback-section">
-                <h3>¿Estás de acuerdo con esta clasificación?</h3>
+                <h3>¿Estás de acuerdo con esta clasificación? ¿Qué has querido decir?</h3>
                 <form action="{{ url_for('feedback') }}" method="post">
                     <input type="hidden" name="original_text" value="{{ text }}">
-                    <input type="hidden" name="original_sentiment" value="{{ sentiment }}">
                     <div class="feedback-buttons">
-                        <button type="submit" name="feedback_sentiment" value="positivo" class="feedback-btn positivo">Positivo</button>
-                        <button type="submit" name="feedback_sentiment" value="neutral" class="feedback-btn neutral">Neutral</button>
-                        <button type="submit" name="feedback_sentiment" value="negativo" class="feedback-btn negativo">Negativo</button>
+                        <button type="submit" name="feedback_customer_rating" value="A" class="feedback-btn positivo">Quise halagar el producto</button>
+                        <button type="submit" name="feedback_customer_rating" value="B" class="feedback-btn neutral">Quise querer informacion adicional del producto para su operativa</button>
+                        <button type="submit" name="feedback_customer_rating" value="C" class="feedback-btn negativo">Quise querer soporte técnico urgentemente</button>
                     </div>
                 </form>
             </div>

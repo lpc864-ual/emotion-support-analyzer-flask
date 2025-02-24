@@ -57,19 +57,19 @@ button:hover, .button:hover {
     display: inline-block;
 }
 
-.positivo {
+.A {
     color: #28a745;
     background-color: #d4edda;
 }
 
-.negativo {
-    color: #dc3545;
-    background-color: #f8d7da;
-}
-
-.neutral {
+.B {
     color: #6c757d;
     background-color: #e9ecef;
+}
+
+.C {
+    color: #dc3545;
+    background-color: #f8d7da;
 }
 
 .feedback-section {
