@@ -15,6 +15,10 @@ A deep learning-based analyzer that classifies customer messages in Spanish to d
   - **B**: Customer needs additional information about the product for operation
   - **C**: Customer needs urgent technical support
 
+## Requirements
+
+- Python 3.10 (required for compatibility with dependencies)
+
 ## Installation
 
 1. Clone the repository:
@@ -23,10 +27,15 @@ git clone https://github.com/[username]/emotion-support-analyzer-flask.git
 cd emotion-support-analyzer-flask
 ```
 
-2. Create a virtual environment (recommended):
+2. Create a virtual environment with Python 3.10 (required):
 ```bash
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+# On Windows:
+py -V:3.10 -m venv venv
+venv\Scripts\activate
+
+# On macOS/Linux:
+python3.10 -m venv venv
+source venv/bin/activate
 ```
 
 3. Install dependencies:
